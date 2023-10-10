@@ -35,7 +35,12 @@ const Home: React.FC = function () {
       color="blackAlpha.700"
       fontWeight="bold"
     >
-      <GridItem pl="2" area="nav" borderRight="1px solid">
+      <GridItem
+        pl="2"
+        area="nav"
+        borderRight="1px solid"
+        borderRightColor="green.700"
+      >
         <Menu
           handleSelectedItem={handleSelectedItem}
           itemSelected={itemSelected}
