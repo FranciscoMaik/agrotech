@@ -11,7 +11,7 @@ interface ContentProps {
 
 export const Content: React.FC<ContentProps> = function ({ title, children }) {
   return (
-    <Flex padding={4} alignItems="center" direction="column">
+    <Flex padding={4} alignItems="center" direction="column" bgColor="#F7F7F7">
       <Heading>{changeTitle(title)}</Heading>
       {children}
     </Flex>

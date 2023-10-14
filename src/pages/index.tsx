@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Grid, GridItem, Heading } from '@chakra-ui/react';
 
-import { Menu, Content } from '../components';
+import { Menu, Content, Agricultor } from '../components';
 import { IItemsSelected } from '../types';
 
 const Home: React.FC = function () {
@@ -10,7 +10,7 @@ const Home: React.FC = function () {
     dashboard: <Heading>ajkshdjkahs</Heading>,
     agriculturalActivity: <Heading>ajkshdjkahs</Heading>,
     family: <Heading>ajkshdjkahs</Heading>,
-    farmer: <Heading>ajkshdjkahs</Heading>,
+    farmer: <Agricultor />,
     livestockActivity: <Heading>ajkshdjkahs</Heading>,
     locale: <Heading>ajkshdjkahs</Heading>,
     orderOfService: <Heading>ajkshdjkahs</Heading>,
