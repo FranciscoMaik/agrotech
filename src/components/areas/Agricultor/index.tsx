@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -29,6 +29,14 @@ const Container = styled.div`
 
 export const Agricultor: React.FC = function () {
   const [isOpen, setIsOpen] = useState(false);
+  const [inputSearched, setInputSearched] = useState('');
+
+  const searchedFarmer = useMemo(() => {
+    if (inputSearched === '') return farmers;
+    return farmers.filter(farmer =>
+      farmer.name.toLowerCase().includes(inputSearched)
+    );
+  }, [inputSearched]);
 
   const handleClosedModalRegister = () => {
     setIsOpen(prev => !prev);
@@ -42,12 +50,18 @@ export const Agricultor: React.FC = function () {
             <InputLeftElement pointerEvents="none">
               <MdOutlineSearch color="gray.700" />
             </InputLeftElement>
-            <Input type="text" placeholder="Pesquisar" variant="outline" />
+            <Input
+              type="text"
+              placeholder="Pesquisar"
+              variant="outline"
+              value={inputSearched}
+              onChange={value => setInputSearched(value.target.value)}
+            />
           </InputGroup>
         </Flex>
 
         <Container>
-          {farmers.map(farmer => (
+          {searchedFarmer.map(farmer => (
             <List
               name={farmer.name}
               address={farmer.address}

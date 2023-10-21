@@ -4,19 +4,9 @@ import { MdOutlineEdit, MdDeleteOutline } from 'react-icons/md';
 
 import { Box, Text, Heading, Divider, Flex, Center } from '@chakra-ui/react';
 
-interface ListProps {
-  name: string;
-  cpf: string;
-  surname: string;
-  sex: string;
-  maritalStatus: string;
-  creditLine: string;
-  course: string;
-  phone: string;
-  address: string;
-}
+import { IFarmer } from '../../types/IFarmer';
 
-export const List: React.FC<ListProps> = function ({
+export const List: React.FC<IFarmer> = function ({
   name,
   surname,
   creditLine,
